@@ -1,28 +1,22 @@
-# 📚 Siskrip — Sistem Skripsi Mahasiswa
+# 🎓 SiSkrip — Sistem Bimbingan Skripsi Mahasiswa
 
-**Siskrip** adalah aplikasi berbasis web untuk membantu pengelolaan proses skripsi mahasiswa, mulai dari pendaftaran judul, persetujuan dosen pembimbing, hingga upload dokumen skripsi.  
-Aplikasi ini dibuat sebagai bagian dari tugas akhir dan ditujukan untuk mempermudah koordinasi antara mahasiswa, dosen pembimbing, dan admin jurusan.
+SiSkrip — Sistem Bimbingan Skripsi Mahasiswa adalah aplikasi desktop berbasis Java untuk membantu mahasiswa dan dosen dalam proses **bimbingan skripsi** secara terstruktur.  
+Dibangun menggunakan **Java Swing** untuk antarmuka grafis (GUI) dan **MySQL** untuk penyimpanan data.
 
----
+## ✨ Fitur-fitur
 
-## ✨ Fitur Utama
+- ✅ Login mahasiswa
+- ✅ Upload dokumen skripsi ke server
+- ✅ Penyimpanan informasi dokumen di database
+- ✅ Validasi login sebelum melakukan bimbingan
+- ✅ Mengambil ID judul skripsi terakhir mahasiswa dari database
+- ✅ Antarmuka grafis berbasis `JFrame` dengan komponen `Swing`
+- ✅ Penanganan error koneksi database & file
+- ✅ Notifikasi berhasil/gagal pada setiap aksi
 
-✅ Pendaftaran judul skripsi secara online  
-✅ Persetujuan pembimbing dan pengecekan status skripsi  
-✅ Upload file skripsi dan revisi  
-✅ Manajemen pengguna: mahasiswa, dosen, admin  
-✅ Riwayat aktivitas skripsi per mahasiswa  
-✅ Antarmuka sederhana dan mudah digunakan
+## 🖥️ Teknologi
 
----
-
-## 🛠️ Teknologi
-
-- **Java** (Servlets, JSP)
-- **MySQL** untuk basis data
-- **HTML, CSS, JavaScript** untuk tampilan
-- Build menggunakan **Apache Ant**
-
----
-
-## 📦 Struktur Project
+- Bahasa Pemrograman: **Java**
+- Antarmuka: **Java Swing**
+- Database: **MySQL**
+- JDBC Driver
