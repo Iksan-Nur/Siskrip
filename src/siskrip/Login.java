@@ -147,11 +147,9 @@ public class Login extends javax.swing.JFrame {
     rs.close();
     pst.close();
     conn.close();
-
 } catch (Exception e) {
     JOptionPane.showMessageDialog(this, "Error login: " + e.getMessage());
 }
-
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**

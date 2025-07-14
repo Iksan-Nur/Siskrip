@@ -4,8 +4,6 @@
  */
 package siskrip;
 
-import javax.swing.JOptionPane;
-
     import java.sql.*;
     import javax.swing.*;
 /**

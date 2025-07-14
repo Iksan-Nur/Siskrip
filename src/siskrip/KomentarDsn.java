@@ -195,32 +195,26 @@ public class KomentarDsn extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Hanya dosen yang dapat mengirim komentar.");
         return;
     }
-
     String isiKomentar = txtKomentar.getText().trim();
     if (isiKomentar.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Komentar tidak boleh kosong!");
         return;
     }
-
     int judulId = Session.judul_id;
-
     // 1️⃣ Ambil dokumen_id
     int dokumenId = getDokumenIdByJudul(judulId);
     if (dokumenId == -1) {
         JOptionPane.showMessageDialog(this, "Dokumen tidak ditemukan untuk judul ini.");
         return;
     }
-
     // 2️⃣ Ambil mahasiswa_id dari dokumenskripsi
     int mahasiswaId = getMahasiswaIdByJudul(judulId);
     if (mahasiswaId == -1) {
         JOptionPane.showMessageDialog(this, "Mahasiswa tidak ditemukan untuk judul ini.");
         return;
     }
-
     // 3️⃣ dosen_id dari sesi login
     int dosenId = Session.user_id;
-
     // INSERT ke komentarbimbingan
     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/siskrip", "root", "");
     String sql = "INSERT INTO komentarbimbingan (dosen_id, mahasiswa_id, dokumen_id, komentar) VALUES (?, ?, ?, ?)";
@@ -231,17 +225,14 @@ public class KomentarDsn extends javax.swing.JFrame {
     pst.setString(4, isiKomentar);
 
     int hasil = pst.executeUpdate();
-
     if (hasil > 0) {
         JOptionPane.showMessageDialog(this, "Komentar berhasil dikirim!");
         txtKomentar.setText("");
     } else {
         JOptionPane.showMessageDialog(this, "Gagal mengirim komentar.");
     }
-
     pst.close();
     conn.close();
-
 } catch (SQLException e) {
     JOptionPane.showMessageDialog(this, "Gagal menyimpan komentar: " + e.getMessage());
 }

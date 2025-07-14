@@ -240,17 +240,14 @@ public class DUSDsn extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "File belum tersedia untuk diunduh.");
         return;
     }
-
     try {
         File file = new File(Session.filePath);
         if (!file.exists()) {
             JOptionPane.showMessageDialog(this, "File tidak ditemukan di path: " + Session.filePath);
             return;
         }
-
         // Buka file dengan aplikasi default
         Desktop.getDesktop().open(file);
-
     } catch (IOException e) {
         JOptionPane.showMessageDialog(this, "Gagal membuka file: " + e.getMessage());
     }

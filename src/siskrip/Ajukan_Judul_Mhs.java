@@ -5,7 +5,7 @@
 package siskrip;
     import java.sql.*;
     import javax.swing.*;
-    import siskrip.Session;
+    
 /**
  *
  * @author ASUS

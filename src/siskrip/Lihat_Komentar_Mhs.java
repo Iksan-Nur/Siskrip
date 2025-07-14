@@ -26,8 +26,6 @@ public class Lihat_Komentar_Mhs extends javax.swing.JFrame {
     this.setLocationRelativeTo(null);
     this.setResizable(false);
     panelKomentarTemplate.setVisible(false);
-
-    // Pastikan JScrollPane tidak ada scroll horizontal
     scrollPaneKomentar.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
     loadKomentar();
@@ -64,16 +62,13 @@ public class Lihat_Komentar_Mhs extends javax.swing.JFrame {
             panelBaru.setLayout(new BoxLayout(panelBaru, BoxLayout.Y_AXIS));
             panelBaru.setBorder(panelKomentarTemplate.getBorder());
             panelBaru.setBackground(panelKomentarTemplate.getBackground());
-
             // Atur batas lebar supaya tidak terlalu lebar
             panelBaru.setMaximumSize(new Dimension(600, Integer.MAX_VALUE));
             panelBaru.setAlignmentX(Component.LEFT_ALIGNMENT);
-
             // Judul
             JLabel lblJudul = new JLabel("Judul Skripsi: " + judul);
             lblJudul.setFont(lblJudulSkripsiTemplate.getFont());
             lblJudul.setAlignmentX(Component.LEFT_ALIGNMENT);
-
             // Komentar
             JTextArea txtKomentar = new JTextArea(komentar);
             txtKomentar.setLineWrap(true);
@@ -84,13 +79,11 @@ public class Lihat_Komentar_Mhs extends javax.swing.JFrame {
             txtKomentar.setBorder(txtKomentarTemplate.getBorder());
             txtKomentar.setMaximumSize(new Dimension(580, 100)); // Lebar dibatasi
             txtKomentar.setAlignmentX(Component.LEFT_ALIGNMENT);
-
             // Tanggal
             JLabel lblTanggal = new JLabel("Tanggal: " + tanggal);
             lblTanggal.setFont(lblTanggalTemplate.getFont());
             lblTanggal.setForeground(lblTanggalTemplate.getForeground());
             lblTanggal.setAlignmentX(Component.LEFT_ALIGNMENT);
-
             // Tambahkan ke panel
             panelBaru.add(lblJudul);
             panelBaru.add(Box.createVerticalStrut(5));
@@ -99,19 +92,18 @@ public class Lihat_Komentar_Mhs extends javax.swing.JFrame {
             panelBaru.add(lblTanggal);
             panelBaru.add(Box.createVerticalStrut(5));
             panelBaru.add(new JSeparator());
-
             // Tambah ke container
             panelKomentarContainer.add(Box.createVerticalStrut(10));
             panelKomentarContainer.add(panelBaru);
         }
-
+        
         panelKomentarContainer.revalidate();
         panelKomentarContainer.repaint();
-
+        
         rs.close();
         pst.close();
         conn.close();
-
+        
     } catch (SQLException e) {
         JOptionPane.showMessageDialog(this, "Gagal memuat komentar: " + e.getMessage());
     }

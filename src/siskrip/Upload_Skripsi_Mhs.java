@@ -6,16 +6,14 @@ package siskrip;
     import java.io.*;
     import java.nio.file.*;
     import java.sql.*;
-    import java.util.Date;
     import javax.swing.*;
     import javax.swing.filechooser.FileNameExtensionFilter;
-    import siskrip.Session;
+
 /**
  *
  * @author ASUS
  */
 public class Upload_Skripsi_Mhs extends javax.swing.JFrame {
-
     private File selectedFile;
     /**
      * Creates new form Upload_Skripsi_Mhs
